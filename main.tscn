@@ -1,0 +1,112 @@
+[gd_scene load_steps=11 format=3 uid="uid://c8cu3i8cwkwjn"]
+
+[ext_resource type="Texture2D" uid="uid://6m7bk7pn4oe4" path="res://background.png" id="1_gxxs2"]
+[ext_resource type="Script" path="res://buttons.gd" id="2_1hbu5"]
+[ext_resource type="Script" path="res://turntable.gd" id="2_3b78v"]
+
+[sub_resource type="Gradient" id="Gradient_8q5xd"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l17r3"]
+gradient = SubResource("Gradient_8q5xd")
+width = 167
+height = 280
+
+[sub_resource type="Gradient" id="Gradient_qaer2"]
+offsets = PackedFloat32Array(0.012987, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vvk8q"]
+gradient = SubResource("Gradient_qaer2")
+width = 167
+height = 280
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qjtx"]
+size = Vector2(167, 280)
+
+[sub_resource type="Gradient" id="Gradient_4iakk"]
+colors = PackedColorArray(0, 0, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_82lfs"]
+gradient = SubResource("Gradient_4iakk")
+width = 167
+height = 280
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(720, 540)
+texture = ExtResource("1_gxxs2")
+script = ExtResource("2_3b78v")
+
+[node name="buttons" type="Node2D" parent="."]
+
+[node name="button1" type="TouchScreenButton" parent="buttons"]
+position = Vector2(446, 699)
+texture_normal = SubResource("GradientTexture2D_l17r3")
+texture_pressed = SubResource("GradientTexture2D_vvk8q")
+shape = SubResource("RectangleShape2D_3qjtx")
+passby_press = true
+script = ExtResource("2_1hbu5")
+
+[node name="button2" type="TouchScreenButton" parent="buttons"]
+position = Vector2(578, 336)
+texture_normal = SubResource("GradientTexture2D_82lfs")
+texture_pressed = SubResource("GradientTexture2D_vvk8q")
+shape = SubResource("RectangleShape2D_3qjtx")
+passby_press = true
+script = ExtResource("2_1hbu5")
+
+[node name="button3" type="TouchScreenButton" parent="buttons"]
+position = Vector2(714, 702)
+texture_normal = SubResource("GradientTexture2D_l17r3")
+texture_pressed = SubResource("GradientTexture2D_vvk8q")
+shape = SubResource("RectangleShape2D_3qjtx")
+passby_press = true
+script = ExtResource("2_1hbu5")
+
+[node name="button4" type="TouchScreenButton" parent="buttons"]
+position = Vector2(845, 336)
+texture_normal = SubResource("GradientTexture2D_82lfs")
+texture_pressed = SubResource("GradientTexture2D_vvk8q")
+shape = SubResource("RectangleShape2D_3qjtx")
+passby_press = true
+script = ExtResource("2_1hbu5")
+
+[node name="button5" type="TouchScreenButton" parent="buttons"]
+position = Vector2(979, 701)
+texture_normal = SubResource("GradientTexture2D_l17r3")
+texture_pressed = SubResource("GradientTexture2D_vvk8q")
+shape = SubResource("RectangleShape2D_3qjtx")
+passby_press = true
+script = ExtResource("2_1hbu5")
+
+[node name="button6" type="TouchScreenButton" parent="buttons"]
+position = Vector2(1111, 335)
+texture_normal = SubResource("GradientTexture2D_82lfs")
+texture_pressed = SubResource("GradientTexture2D_vvk8q")
+shape = SubResource("RectangleShape2D_3qjtx")
+passby_press = true
+script = ExtResource("2_1hbu5")
+
+[node name="button7" type="TouchScreenButton" parent="buttons"]
+position = Vector2(1241, 701)
+texture_normal = SubResource("GradientTexture2D_l17r3")
+texture_pressed = SubResource("GradientTexture2D_vvk8q")
+shape = SubResource("RectangleShape2D_3qjtx")
+passby_press = true
+script = ExtResource("2_1hbu5")
+
+[connection signal="pressed" from="buttons/button1" to="buttons/button1" method="_on_pressed" binds= ["q"]]
+[connection signal="released" from="buttons/button1" to="buttons/button1" method="_on_released" binds= ["a"]]
+[connection signal="pressed" from="buttons/button2" to="buttons/button1" method="_on_pressed" binds= ["w"]]
+[connection signal="released" from="buttons/button2" to="buttons/button1" method="_on_released" binds= ["s"]]
+[connection signal="pressed" from="buttons/button3" to="buttons/button1" method="_on_pressed" binds= ["e"]]
+[connection signal="released" from="buttons/button3" to="buttons/button1" method="_on_released" binds= ["d"]]
+[connection signal="pressed" from="buttons/button4" to="buttons/button1" method="_on_pressed" binds= ["r"]]
+[connection signal="released" from="buttons/button4" to="buttons/button1" method="_on_released" binds= ["f"]]
+[connection signal="pressed" from="buttons/button5" to="buttons/button1" method="_on_pressed" binds= ["t"]]
+[connection signal="released" from="buttons/button5" to="buttons/button1" method="_on_released" binds= ["g"]]
+[connection signal="pressed" from="buttons/button6" to="buttons/button1" method="_on_pressed" binds= ["y"]]
+[connection signal="released" from="buttons/button6" to="buttons/button1" method="_on_released" binds= ["h"]]
+[connection signal="pressed" from="buttons/button7" to="buttons/button1" method="_on_pressed" binds= ["u"]]
+[connection signal="released" from="buttons/button7" to="buttons/button1" method="_on_released" binds= ["j"]]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs10epeuj581r"]
+
+[ext_resource type="Texture2D" uid="uid://7vxa52nuxc1f" path="res://title.png" id="1_5byf4"]
+[ext_resource type="Script" path="res://title.gd" id="1_rismi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ahfj"]
+size = Vector2(1024, 300)
+
+[node name="Title" type="Node2D"]
+script = ExtResource("1_rismi")
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(720, 540)
+texture = ExtResource("1_5byf4")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(965, 949)
+shape = SubResource("RectangleShape2D_4ahfj")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 21.0
+offset_top = 511.0
+offset_right = 1399.0
+offset_bottom = 676.0
+theme_override_font_sizes/font_size = 66
+placeholder_text = "enter your ip address"
+
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
